@@ -1,8 +1,39 @@
+.recharts-wrapper{
+  display: block;
+  width: 100% !important;
+
+  &:before{
+    content: 'Temperature \2103';
+    transform: rotate(-90deg);
+    position: absolute;
+    top: 40%;
+    left: 16%;
+  }
+}
+
 .recharts-surface {
-  width: 100%;
+  width: 100% !important;
 }
 
 .weather {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+
+  // &-verticalSign{
+  //   position: absolute;
+  //   left: 14%;
+  //   transform: rotateX(90deg);
+  //   z-index: 100;
+  // }
+
+  &__dates {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+
+    &-item{
+      padding-right: 90px;
+    }
+  }
 }

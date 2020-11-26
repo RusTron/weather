@@ -3,7 +3,6 @@ import { Header } from './components/Header';
 import './App.css';
 import { PlacesInput } from './components/PlacesInput';
 import { TemperatureChart } from './components/TemperatureChart';
-import {withTranslate} from 'react-translate-text';
 
 function App() {
   return (
@@ -15,4 +14,4 @@ function App() {
   );
 }
 
-export default withTranslate(App);
+export default App;

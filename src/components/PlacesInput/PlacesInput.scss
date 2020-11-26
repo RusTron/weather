@@ -1,9 +1,27 @@
-.dropdown {
-  background-color: #000;
+.mt-2{
+  position: relative;
+}
+
+.dropdown-menu {
+ display: flex;
+ align-items: center;
+ flex-direction: column;
+ position: absolute;
+ width: 100%;
+}
+
+.dropdown-item {
+  background-color: aqua;
+  width: 13.5%;
+  cursor: pointer;
 }
 
 .form-control{
   height: 30px;
   padding-left: 10px;
   font-size: 20px;
+}
+
+.form-input{
+  margin-top: 10px;
 }
