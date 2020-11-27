@@ -51,10 +51,10 @@ export const PlacesInput = () => {
       getTemperatureFromServer(latLng);
       changeLoading(true);
     } catch (e) {
-      console.log(e);// eslint-disable-line
+      // do nothing
     }
   };
- debugger; // eslint-disable-line
+
   return (
     <div className="form-input">
       <PlaceAutocomplete
@@ -63,7 +63,6 @@ export const PlacesInput = () => {
         onSelect={handleSelect}
         searchOptions={searchOptions}
         highlightFirstSuggestion
-        onKeyPress={(e) => console.log(e)}
       >
         {({
           getInputProps,
@@ -109,7 +108,7 @@ export const PlacesInput = () => {
         </h2>
       ) : (
         <h2 className="title">
-          Введите населенный пункт
+          Введите название населенного пункта
         </h2>
       )}
     </div>

@@ -3,17 +3,20 @@
 }
 
 .dropdown-menu {
- display: flex;
- align-items: center;
- flex-direction: column;
- position: absolute;
- width: 100%;
- z-index: 100;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  position: absolute;
+  width: 270px;
+  z-index: 100;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
 }
 
 .dropdown-item {
   background-color: rgb(241, 237, 237);
-  width: 13.5%;
+  width: 100%;
   cursor: pointer;
 
   &:focus,
@@ -26,6 +29,8 @@
   height: 30px;
   padding-left: 10px;
   font-size: 20px;
+  width: 270px;
+  box-sizing: border-box;
 }
 
 .form-input{

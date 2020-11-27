@@ -15,12 +15,12 @@ export const TemperatureChart = () => {
         index: i,
       }));
     }
-    return null;
+    return [];
   });
 
   const actualDates = useMemo(() => {
-    let dates = null;
-    if (temp) {
+    let dates = [];
+    if (temp.length) {
       dates = temp.filter((item, i, arr) => i === 0 || item.date !== arr[i - 1].date);
       if (dates[1].index <= 4) {
         dates.shift();
@@ -31,12 +31,12 @@ export const TemperatureChart = () => {
       return dates;
     }
 
-    return null;
+    return [];
   }, [temp]);
 
   return (
     <div className="weather">
-      {temp !== null && (
+      {!!temp.length && (
         <>
           <LineChart
             width={1200}
@@ -61,9 +61,7 @@ export const TemperatureChart = () => {
           <div
             className="weather__dates"
             style={{
-              paddingLeft: actualDates[0].index
-                ? `${100 + ((actualDates[0].index + actualDates[1].index / 2) * 10)}px`
-                : '50px',
+              paddingLeft: actualDates[0].index ? '40px' : '0px',
             }}
           >
             {actualDates.map((item) => (

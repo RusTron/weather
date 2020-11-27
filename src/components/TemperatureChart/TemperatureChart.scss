@@ -28,14 +28,11 @@ $chartWidth: 1200px;
     display: flex;
     max-width: $chartWidth;
     width: 100%;
+    box-sizing: border-box;
 
     &-item {
       display: inline-block;
-      width: ($chartWidth - 40) / 5;
-    }
-
-    & :first-child{
-      padding-left: 0;
+      padding-left: 150px;
     }
 
     & :last-child{
