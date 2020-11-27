@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import { useSelector } from 'react-redux';
 import {
   LineChart, Line, XAxis, YAxis, CartesianGrid,
@@ -17,6 +17,22 @@ export const TemperatureChart = () => {
     }
     return null;
   });
+
+  const actualDates = useMemo(() => {
+    let dates = null;
+    if (temp) {
+      dates = temp.filter((item, i, arr) => i === 0 || item.date !== arr[i - 1].date);
+      if (dates[1].index <= 4) {
+        dates.shift();
+      } else {
+        dates.pop();
+      }
+
+      return dates;
+    }
+
+    return null;
+  }, [temp]);
 
   return (
     <div className="weather">
@@ -39,11 +55,18 @@ export const TemperatureChart = () => {
               type="monotone"
               dataKey="temperature"
               stroke="#8884d8"
-              activeDot={{ r: 8 }}
+              activeDot={{ r: 1 }}
             />
           </LineChart>
-          <div className="weather__dates">
-            {temp.filter((item, i, arr) => i === 0 || item.date !== arr[i - 1].date).map((item) => (
+          <div
+            className="weather__dates"
+            style={{
+              paddingLeft: actualDates[0].index
+                ? `${100 + ((actualDates[0].index + actualDates[1].index / 2) * 10)}px`
+                : '50px',
+            }}
+          >
+            {actualDates.map((item) => (
               <span
                 className="weather__dates-item"
                 key={item.date}

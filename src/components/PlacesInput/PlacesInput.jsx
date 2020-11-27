@@ -54,7 +54,7 @@ export const PlacesInput = () => {
       console.log(e);// eslint-disable-line
     }
   };
-
+ debugger; // eslint-disable-line
   return (
     <div className="form-input">
       <PlaceAutocomplete
@@ -63,6 +63,7 @@ export const PlacesInput = () => {
         onSelect={handleSelect}
         searchOptions={searchOptions}
         highlightFirstSuggestion
+        onKeyPress={(e) => console.log(e)}
       >
         {({
           getInputProps,
@@ -89,6 +90,7 @@ export const PlacesInput = () => {
                       <div
                         {...getSuggestionItemProps(suggestion, {// eslint-disable-line
                           className: 'dropdown-item',
+                          key: suggestion.description,
                         })}
                       >
                         {suggestion.description}

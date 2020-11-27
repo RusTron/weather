@@ -3,13 +3,13 @@ import './Header.scss';
 
 export const Header = () => (
   <header className="App-header">
-    <a
-      className="App-link"
+    <span
+      className="App-title"
       href="https://reactjs.org"
       target="_blank"
       rel="noopener noreferrer"
     >
-      Learn React
-    </a>
+      Weather Forecast
+    </span>
   </header>
 );
