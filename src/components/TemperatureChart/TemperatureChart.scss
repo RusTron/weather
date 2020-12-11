@@ -1,0 +1,42 @@
+$chartWidth: 1200px;
+
+.recharts-wrapper {
+  display: block;
+  width: 100% !important;
+  max-width: $chartWidth !important;
+
+  &:before {
+    content: 'Temperature \2103';
+    transform: rotate(-90deg);
+    position: absolute;
+    top: 40%;
+    left: -30px;
+  }
+}
+
+.recharts-surface {
+  width: 100% !important;
+}
+
+.weather {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__dates {
+    padding-left: 0px;
+    display: flex;
+    max-width: $chartWidth;
+    width: 100%;
+    box-sizing: border-box;
+
+    &-item {
+      display: inline-block;
+      padding-left: 150px;
+    }
+
+    & :last-child{
+      padding-right: 0;
+    }
+  }
+}
